@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-Improvement Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF7E8;
+    --cream-deep:#FDEBC7;
+    --ink:#2B2140;
+    --ink-soft:#6B5E7A;
+    --coral:#FF5A5F;
+    --coral-deep:#D93A3F;
+    --coral-tint:#FFE1DE;
+    --teal:#1FAF9E;
+    --teal-deep:#0E7F73;
+    --teal-tint:#D9F5EF;
+    --sun:#FFC93C;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Nunito', sans-serif;
+    line-height:1.55;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{ position:relative; overflow:hidden; padding:72px 24px 56px; text-align:center; }
+  .blob{ position:absolute; border-radius:50%; opacity:0.55; z-index:0; }
+  .blob.b1{ width:220px; height:220px; background:var(--sun); top:-70px; left:-60px; }
+  .blob.b2{ width:160px; height:160px; background:var(--teal); top:20px; right:-40px; opacity:0.35; }
+  .blob.b3{ width:120px; height:120px; background:var(--coral); bottom:-50px; left:38%; opacity:0.3; }
+  .hero-inner{ position:relative; z-index:1; max-width:700px; margin:0 auto; }
+  .kicker{
+    display:inline-block; background:var(--ink); color:var(--cream);
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:14px;
+    padding:6px 18px; border-radius:999px; margin-bottom:20px; transform:rotate(-2deg);
+  }
+  h1{ font-family:'Baloo 2', sans-serif; font-weight:800; font-size:clamp(36px, 6vw, 58px); margin:0 0 16px; line-height:1.05; }
+  h1 .accent{ color:var(--coral); }
+  .hero p{ max-width:50ch; margin:0 auto; font-size:18px; color:var(--ink-soft); }
+
+  .search-bar{
+    max-width:520px; margin:32px auto 0; display:flex; background:#fff;
+    border-radius:999px; padding:6px; box-shadow:0 6px 0 var(--cream-deep);
+  }
+  .search-bar input{
+    flex:1; border:none; outline:none; background:transparent;
+    font-family:'Nunito', sans-serif; font-size:16px; padding:12px 18px; color:var(--ink);
+  }
+  .search-bar input::placeholder{ color:var(--ink-soft); }
+
+  /* ---------- Sections ---------- */
+  main{ max-width:1040px; margin:0 auto; padding:20px 24px 100px; }
+  .section{ margin-top:56px; }
+  .section-head{
+    display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:22px;
+  }
+  .section-badge{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:26px;
+    padding:8px 20px; border-radius:16px; color:#fff;
+  }
+  .section.turkish .section-badge{ background:var(--coral); }
+  .section.english .section-badge{ background:var(--teal); }
+  .section-sub{ font-size:14px; color:var(--ink-soft); }
+
+  .book-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:20px; }
+  .book-card{
+    position:relative;
+    background:#fff; border-radius:20px; padding:20px;
+    display:flex; flex-direction:column; gap:12px; transition:transform .15s ease;
+  }
+  .book-card:hover{ transform:translateY(-4px) rotate(-0.5deg); }
+  .section.turkish .book-card{ border:3px solid var(--coral-tint); }
+  .section.english .book-card{ border:3px solid var(--teal-tint); }
+
+  .book-icon{
+    width:56px; height:56px; border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px;
+  }
+  .section.turkish .book-icon{ background:var(--coral-tint); }
+  .section.english .book-icon{ background:var(--teal-tint); }
+
+  .book-card h3{ font-family:'Baloo 2', sans-serif; font-weight:700; font-size:17px; margin:0; word-break:break-word; }
+
+  .book-card a.open{
+    margin-top:auto; display:inline-block; text-align:center;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:14px;
+    text-decoration:none; padding:10px 0; border-radius:999px; color:#fff; cursor:pointer;
+  }
+  .section.turkish a.open{ background:var(--coral); }
+  .section.english a.open{ background:var(--teal); }
+
+  .empty-note{
+    font-size:14px; color:var(--ink-soft); background:#fff;
+    border-radius:16px; padding:20px; border:2px dashed var(--ink-soft);
+  }
+  .empty-note code{
+    background:var(--cream-deep); padding:2px 6px; border-radius:6px;
+  }
+
+  footer{ max-width:1040px; margin:0 auto; padding:24px 24px 60px; font-size:13px; color:var(--ink-soft); text-align:center; }
+  footer a{ color:var(--ink-soft); }
+
+  @media (max-width:560px){
+    .section-badge{ font-size:20px; padding:6px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="hero-inner">
+    <span class="kicker">grow a little every day</span>
+    <h1>Self-Improvement<br><span class="accent">Library</span></h1>
+    <p>A little collection of books that help you build better habits, think clearer, and become who you want to be — in Turkish and English.</p>
+    <div class="search-bar">
+      <input type="text" id="query" placeholder="Search by file name…">
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section class="section turkish">
+    <div class="section-head">
+      <span class="section-badge">🇹🇷 Türkçe Kitaplar</span>
+      <span class="section-sub" id="tr-count"></span>
+    </div>
+    <div class="book-grid" id="tr-grid"></div>
+  </section>
+
+  <section class="section english">
+    <div class="section-head">
+      <span class="section-badge">🇬🇧 English Books</span>
+      <span class="section-sub" id="en-count"></span>
+    </div>
+    <div class="book-grid" id="en-grid"></div>
+  </section>
+
+</main>
+
+<footer>
+  To add a book: on GitHub, open the <code>pdfs/tr</code> or <code>pdfs/en</code> folder in this repo and upload your PDF there.
+  It appears here automatically — no editing needed.
+</footer>
+
+<script>
+/* ---- Fill in your own repo details here ---- */
+const GITHUB_OWNER = 'sturkan28-cloud';
+const GITHUB_REPO = 'Self-Improvement-Library';
+/* --------------------------------------------- */
+
+let trFiles = [];
+let enFiles = [];
+
+function titleFromFilename(name) {
+  const withoutExt = name.replace(/\.pdf$/i, '');
+  return withoutExt.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+async function fetchFolder(path) {
+  const url = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`;
+  try {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) return { files: [], notFound: res.status === 404 };
+    const data = await res.json();
+    if (!Array.isArray(data)) return { files: [], notFound: true };
+    const pdfFiles = data.filter(item => item.type === 'file' && /\.pdf$/i.test(item.name));
+    return { files: pdfFiles, notFound: false };
+  } catch (err) {
+    console.error(`Could not load ${path}`, err);
+    return { files: [], notFound: false, error: true };
+  }
+}
+
+async function loadLibrary() {
+  const [tr, en] = await Promise.all([fetchFolder('pdfs/tr'), fetchFolder('pdfs/en')]);
+  trFiles = tr.files;
+  enFiles = en.files;
+  render();
+}
+
+function render() {
+  const q = document.getElementById('query').value.trim().toLowerCase();
+  const filterFn = f => !q || f.name.toLowerCase().includes(q);
+
+  renderGrid('tr-grid', trFiles.filter(filterFn), 'pdfs/tr');
+  renderGrid('en-grid', enFiles.filter(filterFn), 'pdfs/en');
+
+  document.getElementById('tr-count').textContent = `${trFiles.length} book${trFiles.length === 1 ? '' : 's'}`;
+  document.getElementById('en-count').textContent = `${enFiles.length} book${enFiles.length === 1 ? '' : 's'}`;
+}
+
+function renderGrid(gridId, list, folderPath) {
+  const grid = document.getElementById(gridId);
+  if (list.length === 0) {
+    grid.innerHTML = `<div class="empty-note">No books here yet. On GitHub, open <code>${folderPath}</code> and upload a PDF — it'll show up here.</div>`;
+    return;
+  }
+  grid.innerHTML = list.map(file => `
+    <div class="book-card">
+      <div class="book-icon">📖</div>
+      <h3>${escapeHtml(titleFromFilename(file.name))}</h3>
+      <a class="open" href="${file.download_url}" target="_blank" rel="noopener">Open PDF</a>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+document.getElementById('query').addEventListener('input', render);
+loadLibrary();
+</script>
+
+</body>
+</html>
